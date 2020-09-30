@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <title>
 		{%block title%}
 
@@ -16,17 +18,8 @@
 	</title>
   </head>
   <body>
-  	<!-- <header>
-  		<a href="{% url 'home' %}"> Home </a> |
-  		<a href="{% url 'about' %}"> About </a>
-  	</header>
-  	<i class="fas fa-coffee"></i>
-    {% block content%}
-
-	{%endblock%} -->
-
 	<nav class="navbar navbar-expand-md navbar-light bg-dark">
-		<a href="#" class="navbar-brand"><i class="fas fa-store-alt"></i></a>
+		<a href="{ % url 'home' %}" class="navbar-brand"><i class="fas fa-store-alt"></i></a>
 		<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target = "#nav" name="button"><span class="navbar-toggler-icon"></span>
 			
 		</button>
@@ -50,7 +43,7 @@
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link text-light font-weight-blod px-3" href="">About</a>
+					<a class="nav-link text-light font-weight-blod px-3" href="{ % url 'about' %}">About</a>
 				</li>
 			</ul>
 			<form class="form-inline ml-3">
@@ -64,6 +57,10 @@
 		</div>
 	</nav>
 
+	{% block content %}
+
+	{% endblock %}
+
 
 
 
@@ -75,3 +72,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </body>
 </html>
+
