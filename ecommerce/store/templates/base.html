@@ -19,7 +19,7 @@
   </head>
   <body>
 	<nav class="navbar navbar-expand-md navbar-light bg-dark">
-		<a href="{ % url 'home' %}" class="navbar-brand"><i class="fas fa-store-alt"></i></a>
+		<a href="{% url 'home' %}" class="navbar-brand"><i class="fas fa-store-alt"></i></a>
 		<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target = "#nav" name="button"><span class="navbar-toggler-icon"></span>
 			
 		</button>
@@ -43,7 +43,7 @@
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link text-light font-weight-blod px-3" href="{ % url 'about' %}">About</a>
+					<a class="nav-link text-light font-weight-blod px-3" href="{% url 'about' %}">About</a>
 				</li>
 			</ul>
 			<form class="form-inline ml-3">
