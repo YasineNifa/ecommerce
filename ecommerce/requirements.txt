@@ -1,0 +1,15 @@
+certifi==2020.6.20
+chardet==3.0.4
+dj-database-url==0.5.0
+Django==2.1.5
+django-crispy-forms==1.9.2
+django-widget-tweaks==1.4.8
+gunicorn==20.0.4
+idna==2.10
+Pillow==7.2.0
+psycopg2==2.8.6
+pytz==2020.1
+requests==2.24.0
+stripe==2.53.0
+urllib3==1.25.10
+whitenoise==5.2.0
