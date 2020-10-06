@@ -4,6 +4,10 @@ from .models import Product, Category,Cart,CartItem
 # Create your views here.
 from django.core.exceptions import ObjectDoesNotExist
 
+import stripe
+from django.conf import settings
+
+
 def home(request, category_slug=None):
 	category_page = None
 	products = None
@@ -74,7 +78,13 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
 			counter += cart_item.quantity
 	except ObjectDoesNotExist:
 		pass
-	return render(request,'cart.html',dict(cart_items = cart_items,total=total,counter = counter))
+	stripe.api_key = settings.STRIPE_SECRET_KEY
+	stripe_total = int(total * 100)
+	description = 'Yass-Store - New Order'
+	data_key = settings.STRIPE_PUBLISHABLE_KEY
+
+
+	return render(request,'cart.html',dict(cart_items = cart_items,total=total,counter = counter, data_key = data_key,stripe_total = stripe_total, description = description))
 	
 
 def cart_remove(request, product_id):

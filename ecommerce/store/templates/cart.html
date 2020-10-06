@@ -62,15 +62,15 @@
 					{% if cart_item.quantity < cart_item.product.stock %}
 						<td>
 						&nbsp;<a href="{% url 'add_cart' cart_item.product.id%}"><i class="fas fa-plus-circle cart_icon"></i></a>
-		                &nbsp;<a href="{%url 'cart_remove' cart_item.product.id%}"><i class="fas fa-minus-circle cart_icon"></i></a>
-		                &nbsp;<a href="{%url 'cart_trash' cart_item.product.id%}"><i class="fas fa-trash-alt cart_icon"></i></a>
+						&nbsp;<a href="{%url 'cart_remove' cart_item.product.id%}"><i class="fas fa-minus-circle cart_icon"></i></a>
+						&nbsp;<a href="{%url 'cart_trash' cart_item.product.id%}"><i class="fas fa-trash-alt cart_icon"></i></a>
 						</td>
 					{% else %}
 
-		                <td>
+						<td>
 						
-		                &nbsp;<a href="{%url 'cart_remove' cart_item.product.id%}"><i class="fas fa-minus-circle cart_icon"></i></a>
-		                &nbsp;<a href="{%url 'cart_trash' cart_item.product.id%}"><i class="fas fa-trash-alt cart_icon"></i></a>
+						&nbsp;<a href="{%url 'cart_remove' cart_item.product.id%}"><i class="fas fa-minus-circle cart_icon"></i></a>
+						&nbsp;<a href="{%url 'cart_trash' cart_item.product.id%}"><i class="fas fa-trash-alt cart_icon"></i></a>
 						</td>
 					{%endif%}
 					
@@ -91,23 +91,39 @@
 					</tr>
 				</thead>
 				<tbody>
-		            <tr>
-		              <td>
-		                Please review your cart items before proceeding with the payment.
-		              </td>
-		            </tr>
-		            <tr>
-		              <td class="text-left">
-		                Your total is: <strong>${{total}}</strong>
-		              </td>
-		            </tr>
-		         </tbody>
+					<tr>
+					  <td>
+						Please review your cart items before proceeding with the payment.
+					  </td>
+					</tr>
+					<tr>
+					  <td class="text-left">
+						Your total is: <strong>${{total}}</strong>
+					  </td>
+					</tr>
+				 </tbody>
 			</table>
 			<div class="mx-auto">
+				<form class="" action="" method="POST">
+					{% csrf_token %}
+					<script src="https://checkout.stripe.com/checkout.js"
+					class="stripe-button"
+					data-key="{{ data_key }}"
+					data-amount="{{ stripe_total }}"
+					data-name="Yass-Store"
+					data-description="{{ description }}"
+					data-locale="auto"
+					data-currency="usd"
+					data-shipping-address="true"
+					data-billing-address="true"
+					data-zip-code="true">
+					</script>
+				 </form>
+
 				<a href="{%url 'home'%}" style="text-decoration: none;">
 					<button type="button" class="btn btn-lg btn-block bg-dark text-white">
-		              Continue Shopping
-		            </button>
+					  Continue Shopping
+					</button>
 				</a>
 				
 			</div>
