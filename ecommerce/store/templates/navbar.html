@@ -11,12 +11,10 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link text-light font-weight-blod px-3 dropdown-toggle" href="" data-toggle="dropdown">Categories</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="">Categorie 1</a>
-						<a class="dropdown-item" href="">Categorie 2</a>
-						<a class="dropdown-item" href="">Categorie 3</a>
-						<a class="dropdown-item" href="">Categorie 4</a>
-						<a class="dropdown-item" href="">Categorie 5</a>
-						<a class="dropdown-item" href="">Categorie 6</a>
+						<a class="dropdown-item" href="{% url 'home' %}">All Products</a>
+						{% for category in links %}
+						<a class="dropdown-item" href="{{category.get_url}}">{{category.name}}</a>
+						{% endfor %}
 					</div>
 
 				</li><!-- text-uppercase -->
@@ -25,9 +23,7 @@
 					<a class="nav-link text-light font-weight-blod px-3" href="">Contact</a>
 				</li>
 
-				<li class="nav-item">
-					<a class="nav-link text-light font-weight-blod px-3" href="{% url 'product' %}">Product</a>
-				</li>
+			
 			</ul>
 			<form class="form-inline ml-3">
 				<div class="input-group">
