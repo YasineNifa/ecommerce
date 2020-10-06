@@ -97,3 +97,12 @@ def cart_trash(request, product_id):
 	cart_item.delete()
 
 	return redirect('cart_detail')
+
+
+
+def search(request):
+	products = Product.objects.filter(name__contains=request.GET['name'])
+	context = {
+		'products' : products
+	}
+	return render(request,'home.html',context)

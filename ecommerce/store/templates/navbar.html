@@ -31,9 +31,9 @@
 				{%endif%}
 			
 			</ul>
-			<form class="form-inline ml-3">
+			<form class="form-inline ml-3" action="{%url 'search'%}", method = "GET">
 				<div class="input-group">
-					<input type="text" class = "form-control" placeholder="Search">
+					<input type="text" name = "name" class = "form-control" placeholder="Search">
 					<div class="input-group-append">
 						<button type="submit" class="btn btn-warning" name="button"><i><i class="fas fa-search"></i></i></button>
 					</div>
