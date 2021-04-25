@@ -8,7 +8,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="C1.png" alt="Logo" width="80" height="80">
+    <img src="shop.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Ecommerce</h3>
@@ -35,6 +35,6 @@ This section should list any major frameworks that you built your project using.
 
 ### Demo
 
-<img src="C1.png" alt="Logo">
+<img src="shop.png" alt="Logo">
 
 
