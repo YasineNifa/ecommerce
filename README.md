@@ -30,7 +30,7 @@
 
 * Python
 * Django
-* Html/Css
+* Javascript/Html/Css
 
 ### Demo
 
