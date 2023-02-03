@@ -31,6 +31,7 @@
 * Python
 * Django
 * Django Template
+* Postgres
 * Javascript/Html/Css
 
 ### Demo
